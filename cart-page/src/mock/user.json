@@ -1,0 +1,7 @@
+{
+  "id": 123,
+  "firstname": "Jean",
+  "lastname": "Martin",
+  "isVIP": true,
+  "coupon": 10
+}
