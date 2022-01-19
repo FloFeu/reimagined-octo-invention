@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Product } from 'src/models/product';
 import { PRODUCTS } from '../../mock/mock-products';
 
@@ -7,12 +7,14 @@ import { PRODUCTS } from '../../mock/mock-products';
   templateUrl: './cart-table.component.html',
   styleUrls: ['./cart-table.component.css']
 })
-export class CartTableComponent implements OnInit {
+export class CartTableComponent  {
   products: Product[] = PRODUCTS;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  removeItem(product: Product): void {
+    this.products = this.products.filter(p => p !== product);
   }
 
+  calculateTotalPrice() {
+    
+  }
 }

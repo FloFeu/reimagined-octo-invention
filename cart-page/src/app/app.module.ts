@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { CartTableComponent } from './cart-table/cart-table.component';
 import { SvgComponent } from './svg/svg.component';
 import { SummaryComponent } from './summary/summary.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { SummaryComponent } from './summary/summary.component';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
