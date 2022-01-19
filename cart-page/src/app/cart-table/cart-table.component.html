@@ -1,0 +1,40 @@
+<table>
+    <thead>
+        <tr>
+            <th>Image</th>
+            <th>Product Name</th>
+            <th class="table__quantity">Quantity</th>
+            <th>Total</th>
+            <th>Remove</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let product of products">
+            <td class="product__img">
+                <img src={{product.image}} alt={{product.title}}>
+                <div class="product__img__popup isNew" *ngIf="product.isNew">
+                    <span>New product</span>
+                </div>
+                <div class="product__img__popup endSoon" *ngIf="product.isSoonEnding">
+                    <span>End Soon</span>
+                </div>
+            </td>
+            <td class="product__name">
+                {{product.title}}
+                <span class="isNew" *ngIf="product.isNew">(New product)</span>
+                <span class ="endSoon" *ngIf="product.isSoonEnding">(End Soon)</span>
+            </td>
+            <td class="product__quantity">
+                <label for="quantity"></label>
+                <input type="number" value="{{product.quantity}}">
+            </td>
+            <td class="product__price">
+                {{product.price * product.quantity | currency }}
+            </td>
+            <td class="product__remove">
+                <app-svg></app-svg>
+            </td>
+        </tr>
+    </tbody>
+</table>
