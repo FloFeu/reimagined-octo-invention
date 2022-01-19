@@ -13,13 +13,18 @@
         <div class="summary__coupon border">
             <div class="flex">
                 <h4>Coupon Discount</h4>
-                <p class="bold">
-                    % {{ coupon }}
+                <p class="bold" *ngIf="user.coupon; else noCoupon">
+                    % {{ user.coupon }}
                 </p>
+                <ng-template #noCoupon>
+                    <p class="bold">
+                        No coupon
+                    </p>
+                </ng-template>
             </div>
             <div class="flex">
                 <h4>Shipping Cost</h4>
-                <p class="bold" *ngIf="user.isVip; else notVip">
+                <p class="bold" *ngIf="user.isVIP; else notVip">
                     Free
                 </p>
                 <ng-template #notVip>
