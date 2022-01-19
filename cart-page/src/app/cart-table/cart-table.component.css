@@ -43,6 +43,7 @@ tr {
   font-weight: bold;
 }
 .product__img .isNew {
+  margin: 3em 0;
   background-color: #488f4f;
 }
 .product__img .endSoon {

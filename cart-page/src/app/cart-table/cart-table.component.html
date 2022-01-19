@@ -12,10 +12,13 @@
     <tbody>
         <tr *ngFor="let product of products">
             <td class="product__img">
-                <img src={{product.image}} alt={{product.title}}>
-                <div class="product__img__popup isNew" *ngIf="product.isNew">
+                
+                <div class="product__img__popup isNew" *ngIf="product.isNew; else notNew">
                     <span>New product</span>
                 </div>
+                <ng-template #notNew>
+                    <img src={{product.image}} alt={{product.title}}>
+                </ng-template>
                 <div class="product__img__popup endSoon" *ngIf="product.isSoonEnding">
                     <span>End Soon</span>
                 </div>

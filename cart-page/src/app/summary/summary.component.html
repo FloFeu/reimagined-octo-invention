@@ -1,0 +1,41 @@
+<div class="summary">
+    <div class="container">
+        <div class="summary__title border">
+            <h3>Order summary</h3>
+            <div class="flex">
+                <h4>Sub Total</h4>
+                <p class="bold">
+                    {{ totalPrice | currency }}
+                </p>
+            </div>
+        </div>
+
+        <div class="summary__coupon border">
+            <div class="flex">
+                <h4>Coupon Discount</h4>
+                <p class="bold">
+                    % {{ coupon }}
+                </p>
+            </div>
+            <div class="flex">
+                <h4>Shipping Cost</h4>
+                <p class="bold" *ngIf="user.isVip; else notVip">
+                    Free
+                </p>
+                <ng-template #notVip>
+                    <p class="bold">
+                        {{3.99 | currency}}
+                    </p>
+                </ng-template>
+                
+            </div>
+        </div>
+
+        <div class="summary__total flex">
+            <h5>Total</h5>
+            <p class="bold">
+                {{ totalCalculatedAfterDiscount | currency }}
+            </p>
+        </div>
+    </div>
+</div>

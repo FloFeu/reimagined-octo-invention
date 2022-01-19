@@ -1,0 +1,44 @@
+.summary {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-right: 1em;
+}
+.container{
+    width: 25em;
+}
+
+.summary__total{
+    margin-top: 1em;
+}
+
+
+.bold {
+    font-weight: bold;
+    color: gray;
+}
+.border {
+    border-bottom: 1px solid lightgray;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h4{
+    font-weight: 400;
+    margin: 0;
+    padding:0;
+    line-height: 30px;
+}
+
+h5 {
+    font-size: 1.6em;
+    margin: 0;
+    padding: 0;
+    line-height: 35px;
+    color: #ec7a5c
+}
