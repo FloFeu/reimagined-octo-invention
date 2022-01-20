@@ -12,7 +12,6 @@
     <tbody>
         <tr *ngFor="let product of products">
             <td class="product__img">
-                
                 <div class="product__img__popup isNew" *ngIf="product.isNew; else notNew">
                     <span>New product</span>
                 </div>
@@ -36,7 +35,7 @@
                 {{product.price * product.quantity | currency }}
             </td>
             <td class="product__remove">
-                <app-svg (click)="removeItem(product)"></app-svg>
+                <app-svg (click)="removeProduct(product)"></app-svg>
             </td>
         </tr>
     </tbody>
