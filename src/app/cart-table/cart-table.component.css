@@ -68,6 +68,7 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
 .product__quantity input{
    width: 2em;
    padding: 0.1em 0.4em;
