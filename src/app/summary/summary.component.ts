@@ -5,10 +5,10 @@ import { User } from 'src/models/user';
 @Component({
   selector: 'app-summary',
   templateUrl: './summary.component.html',
-  styleUrls: ['./summary.component.css']
+  styleUrls: ['./summary.component.scss']
 })
 export class SummaryComponent implements OnInit {
-  user: User = USER; 
+  user: User = USER;
   totalPrice = 266.36;
   coupon = 10;
 

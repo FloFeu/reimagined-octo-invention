@@ -11,30 +11,30 @@
 
     <tbody>
         <tr *ngFor="let product of products">
-            <td class="product__img">
-                <div class="product__img__popup isNew" *ngIf="product.isNew; else notNew">
+            <td class="product__cell cell__image">
+                <div class="label label--isNew" *ngIf="product.isNew; else notNew">
                     <span>New product</span>
                 </div>
                 <ng-template #notNew>
                     <img src={{product.image}} alt={{product.title}}>
                 </ng-template>
-                <div class="product__img__popup endSoon" *ngIf="product.isSoonEnding">
+                <div class="label label--endSoon" *ngIf="product.isSoonEnding">
                     <span>End Soon</span>
                 </div>
             </td>
-            <td class="product__name">
+            <td class="product__cell cell__title">
                 {{product.title}}
-                <span class="isNew" *ngIf="product.isNew">(New product)</span>
-                <span class ="endSoon" *ngIf="product.isSoonEnding">(End Soon)</span>
+                <span class="cell__title--isNew" *ngIf="product.isNew">(New product)</span>
+                <span class="cell__title--endSoon" *ngIf="product.isSoonEnding">(End Soon)</span>
             </td>
-            <td class="product__quantity">
+            <td class="product__cell cell__quantity">
                 <label for="quantity"></label>
                 <input type="number" [(ngModel)]="product.quantity">
             </td>
-            <td class="product__price">
+            <td class="product__cell cell__price">
                 {{product.price * product.quantity | currency }}
             </td>
-            <td class="product__remove">
+            <td class="product__cell cell__remove">
                 <app-svg (click)="removeProduct(product)"></app-svg>
             </td>
         </tr>
