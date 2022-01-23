@@ -1,5 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { filter, Observable, of } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { PRODUCTS } from 'src/mock/mock-products';
 import { Product } from 'src/models/product';
 
@@ -7,12 +8,14 @@ import { Product } from 'src/models/product';
   providedIn: 'root'
 })
 export class ProductsService {
+  private productsUrl = 'api/products';
 
-  constructor() { }
+  constructor(
+    private http: HttpClient
+  ) { }
 
   getProducts(): Observable<Product[]> {
-    const products = of(PRODUCTS);
-    return products;
+    return this.http.get<Product[]>(this.productsUrl);
   }
   
 }
