@@ -1,6 +1,5 @@
 <div *ngIf="userIsLoggedIn; else userIsNotLoggedIn">
     <app-cart-table></app-cart-table>
-    <app-summary></app-summary>
 </div>
 <ng-template #userIsNotLoggedIn>
     <p class="noUser">Loading...</p>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/models/product';
-import { ProductsService } from '../products.service';
+import { ProductsService } from '../../services/products.service';
+
 
 @Component({
   selector: 'app-cart-table',
@@ -19,10 +20,6 @@ export class CartTableComponent implements OnInit {
   getProducts(): void {
     this.productsService.getProducts()
       .subscribe(products => this.products = products);
-  }
-
-  removeProduct(product: Product): void {
-    this.products = this.products.filter(p => p !== product);
   }
 
 }

@@ -1,0 +1,19 @@
+<table>
+    <thead>
+        <tr>
+            <th>Image</th>
+            <th>Product Name</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th>Remove</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr app-product *ngFor="let product of products" [product]="product">
+        </tr>
+    </tbody>
+
+</table>
+
+<app-summary></app-summary>

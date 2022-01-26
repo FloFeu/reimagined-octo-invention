@@ -3,12 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { CartTableComponent } from './cart-table/cart-table.component';
-import { SvgComponent } from './svg/svg.component';
-import { SummaryComponent } from './summary/summary.component';
+import { CartTableComponent } from './components/cart-table/cart-table.component';
+import { SvgComponent } from './components/svg/svg.component';
+import { SummaryComponent } from './components/summary/summary.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './in-memory-data.service';
+import { InMemoryDataService } from './services/in-memory-data.service';
+import { ProductComponent } from './components/product/product.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { InMemoryDataService } from './in-memory-data.service';
     AppComponent,
     CartTableComponent,
     SvgComponent,
-    SummaryComponent
+    SummaryComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
